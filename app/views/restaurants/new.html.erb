@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Add a new restaurant</h1>
+
+  <%= simple_form_for @restaurant, html: { class: "needs-validation", novalidate: true } do |f| %>
+    <div class="mb-3">
+      <%= f.input :name, label: "Name", input_html: { class: "form-control" }, wrapper_html: { class: "form-group" } %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.input :address, label: "Address", input_html: { class: "form-control" }, wrapper_html: { class: "form-group" } %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.input :phone_number, label: "Phone number", input_html: { class: "form-control" }, wrapper_html: { class: "form-group" } %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], label: "Category", input_html: { class: "form-select" }, wrapper_html: { class: "form-group" } %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.submit "Create Restaurant", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Back to restaurants", restaurants_path, class: "btn btn-secondary mt-3" %>
+</div>
